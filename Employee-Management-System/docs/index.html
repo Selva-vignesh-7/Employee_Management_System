@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System | Full-Stack Solution</title>
+    <link rel="icon" href="screenshots/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .navbar {
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5rem 0;
+        }
+        
+        .feature-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .tech-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .screenshot {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.02);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-people-fill me-2"></i>EMS
+        </a>
+        
+        <!-- Live Demo Button - Visible on all screens -->
+        <a class="btn btn-outline-light d-lg-none ms-auto me-2" href="https://ems-springboot-application-kvr10.netlify.app/" target="_blank">
+            Live Demo
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#technologies">Technologies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#screenshots">Screenshots</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#installation">Installation</a> <!-- Fixed typo -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <!-- Live Demo Button - Visible only on desktop -->
+                <li class="nav-item ms-lg-3 d-none d-lg-block">
+                    <a class="btn btn-outline-light" href="https://ems-springboot-application-kvr10.netlify.app/" target="_blank">Live Demo</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Content Column - Always comes first in DOM -->
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Employee Management System</h1>
+                <p class="lead mb-4">A modern full-stack solution for efficient employee data management with real-time CRUD operations and responsive design.</p>
+                <div class="d-flex gap-3">
+                    <a href="https://github.com/Kvr-10/Employee-Management-System" class="btn btn-light btn-lg" target="_blank">
+                        <i class="bi bi-github me-2"></i>View on GitHub
+                    </a>
+                    <a href="#demo" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-play-circle me-2"></i>See Demo
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Video Column - Comes second in DOM but appears below on mobile -->
+            <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="demo-video ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/YQTeTHjM6jo" 
+                            allowfullscreen
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        padding: 4rem 0;
+    }
+
+    /* YouTube Video Styling */
+    .demo-video {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        background: #000;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Desktop specific styles */
+    @media (min-width: 992px) {
+        .hero-section {
+            padding: 6rem 0;
+        }
+        
+        .demo-video {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .demo-video:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    /* Large desktop enhancement */
+    @media (min-width: 1400px) {
+        .hero-section {
+            padding: 8rem 0;
+        }
+    }
+</style>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Powerful Features</h2>
+                <p class="text-muted">Everything you need for efficient employee management</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card card p-4">
+                        <div class="text-center">
+                            <i class="bi bi-speedometer2 tech-icon"></i>
+                            <h4>Employee Dashboard</h4>
+                        </div>
+                        <p class="text-muted">Comprehensive view of all employees with advanced pagination and search functionality for quick access to information.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card card p-4">
+                        <div class="text-center">
+                            <i class="bi bi-database-check tech-icon"></i>
+                            <h4>CRUD Operations</h4>
+                        </div>
+                        <p class="text-muted">Full Create, Read, Update, and Delete functionality with robust form validation to ensure data integrity.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card card p-4">
+                        <div class="text-center">
+                            <i class="bi bi-phone tech-icon"></i>
+                            <h4>Responsive Design</h4>
+                        </div>
+                        <p class="text-muted">Optimized for all devices from desktop to mobile, ensuring accessibility wherever you need it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Technology Stack</h2>
+                <p class="text-muted">Modern technologies powering the application</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="h4 mb-4"><i class="bi bi-server me-2"></i>Backend</h3>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <span>Spring Boot (Java) - Robust backend framework</span>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <span>Spring Data JPA - Simplified database operations</span>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <span>MySQL - Relational database management</span>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <span>Maven - Dependency management</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6">
+                    <h3 class="h4 mb-4"><i class="bi bi-layout-text-sidebar me-2"></i>Frontend</h3>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <span>React (Vite) - Modern frontend framework</span>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <span>Bootstrap - Responsive UI components</span>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <span>Axios - HTTP client for API communication</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <h3 class="h4 mb-4"><i class="bi bi-cloud-arrow-up me-2"></i>Deployment & DevOps</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">CI/CD</h5>
+                                <p class="card-text">GitHub Actions for automated workflows</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Containerization</h5>
+                                <p class="card-text">Docker for consistent environments</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Hosting</h5>
+                                <p class="card-text">
+                                    <strong>Frontend:</strong> Netlify<br>
+                                    <strong>Backend:</strong> Render<br>
+                                    <strong>Database:</strong> Railway
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Application Screenshots</h2>
+                <p class="text-muted">See the system in action</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <img src="screenshots/dashboard.jpg" alt="Dashboard" class="img-fluid screenshot">
+                    <p class="text-center mt-2 fw-semibold">Employee Dashboard</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="screenshots/add-employee.png" alt="Add Employee" class="img-fluid screenshot">
+                    <p class="text-center mt-2 fw-semibold">Add New Employee</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="screenshots/update-employee.png" alt="Update Employee" class="img-fluid screenshot">
+                    <p class="text-center mt-2 fw-semibold">Update Employee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Live Demo</h2>
+            <p class="lead mb-4">Experience the Employee Management System right now</p>
+            <a href="https://ems-springboot-application-kvr10.netlify.app/" class="btn btn-primary btn-lg" target="_blank">
+                <i class="bi bi-play-fill me-2"></i>Launch Demo
+            </a>
+            <p class="text-muted mt-3"><small>Note: The backend service on Render may take ~50 seconds to respond on first request due to cold start.</small></p>
+        </div>
+    </section>
+
+<!-- Installation Section -->
+<section id="installation" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Installation Guide</h2>
+            <p class="text-muted">Get started with local development</p>
+        </div>
+        
+        <!-- Prerequisites Section -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3 class="h4 mb-3">Prerequisites</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Java JDK 17+
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Node.js 16+
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                MySQL 8+
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Maven
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                npm
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Setup Instructions -->
+        <div class="row g-4">
+            <!-- Backend Setup -->
+            <div class="col-lg-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="h4 mb-4">
+                            <i class="bi bi-server me-2 text-primary"></i>
+                            Backend Setup
+                        </h3>
+                        
+                        <h5 class="card-title text-muted mb-3">Clone Repository</h5>
+                        <pre class="bg-dark text-light p-3 rounded mb-4"><code>git clone https://github.com/Kvr-10/Employee-Management-System.git
+cd Employee-Management-System/backend</code></pre>
+                        
+                        <h5 class="card-title text-muted mb-3">Configure Environment</h5>
+                        <pre class="bg-dark text-light p-3 rounded mb-4"><code>echo "DATASOURCE_URL=jdbc:mysql://your-database-url" >> .env
+echo "DATASOURCE_USER=your-username" >> .env
+echo "DATASOURCE_PASSWORD=your-password" >> .env
+echo "FRONTEND_URL=your-frontend-url" >> .env</code></pre>
+                        
+                        <h5 class="card-title text-muted mb-3">Run Backend</h5>
+                        <pre class="bg-dark text-light p-3 rounded"><code>mvn clean install
+mvn spring-boot:run</code></pre>
+                    </div>
+                </div>
+            </div>
+            
+          <!-- Frontend Setup -->
+            <div class="col-lg-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="h4 mb-4">
+                            <i class="bi bi-layout-text-sidebar me-2 text-primary"></i>
+                            Frontend Setup
+                        </h3>
+                        
+                        <h5 class="card-title text-muted mb-3">Navigate to Frontend</h5>
+                        <pre class="bg-dark text-light p-3 rounded mb-4"><code>cd ../frontend</code></pre>
+                        
+                        <h5 class="card-title text-muted mb-3">Create Environment File</h5>
+                        <pre class="bg-dark text-light p-3 rounded mb-4"><code>echo "VITE_API_BASE_URL=http://localhost:8080" > .env</code></pre>
+                        
+                        <h5 class="card-title text-muted mb-3">Install Dependencies</h5>
+                        <pre class="bg-dark text-light p-3 rounded mb-4"><code>npm install</code></pre>
+                        
+                        <h5 class="card-title text-muted mb-3">Run Development Server</h5>
+                        <pre class="bg-dark text-light p-3 rounded"><code>npm run dev</code></pre>
+                        
+                        <div class="alert alert-info mt-3">
+                            <i class="bi bi-info-circle me-2"></i>
+                            <strong>Note:</strong> Make sure your backend server is running on port 8080
+                            before starting the frontend.
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+
+    <!-- API Documentation -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">API Documentation</h2>
+                <p class="text-muted">Complete REST API endpoints for integration</p>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Method</th>
+                            <th>Endpoint</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge bg-success">GET</span></td>
+                            <td><code>/api/employees</code></td>
+                            <td>Get all employees with pagination</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bg-primary">POST</span></td>
+                            <td><code>/api/employees</code></td>
+                            <td>Create new employee record</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bg-success">GET</span></td>
+                            <td><code>/api/employees/{id}</code></td>
+                            <td>Get specific employee by ID</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bg-warning text-dark">PUT</span></td>
+                            <td><code>/api/employees/{id}</code></td>
+                            <td>Update existing employee</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bg-danger">DELETE</span></td>
+                            <td><code>/api/employees/{id}</code></td>
+                            <td>Delete employee record</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Get In Touch</h2>
+                <p class="text-muted">Have questions or want to collaborate?</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow">
+                        <div class="card-body p-5">
+                            <div class="text-center mb-4">
+                                <h3>Chaman Sinha</h3>
+                                <p class="text-muted">Full-Stack Developer</p>
+                            </div>
+                            
+                            <div class="d-flex flex-column gap-3">
+                                <a href="mailto:chamansinha9480@gmail.com" class="btn btn-outline-primary">
+                                    <i class="bi bi-envelope me-2"></i>chamansinha9480@gmail.com
+                                </a>
+                                <a href="https://kvr-10.github.io" class="btn btn-outline-primary" target="_blank">
+                                    <i class="bi bi-person-circle me-2"></i>View Portfolio
+                                </a>
+                                <a href="https://github.com/Kvr-10" class="btn btn-outline-primary" target="_blank">
+                                    <i class="bi bi-github me-2"></i>GitHub Profile
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container text-center">
+            <p class="mb-0">© 2025 Employee Management System. All rights reserved.</p>
+            <p class="mb-0">Developed with by Chaman Sinha</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
