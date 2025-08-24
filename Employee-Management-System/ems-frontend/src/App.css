@@ -1,0 +1,40 @@
+body {
+    padding-bottom: 60px; /* Space for footer */
+    margin: 0;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+.actions {
+    display: flex;
+    gap: 5px; /* Adjust as needed */
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 8px; /* Space between buttons */
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    justify-content: center; /* Center aligns if they wrap */
+  }
+  
+  .update-btn,
+  .delete-btn {
+    flex: 1; /* Allows buttons to resize evenly */
+    min-width: 80px; /* Ensures buttons don't become too small */
+  }
+
+  .table-container {
+    overflow-x: auto; /* Allows horizontal scrolling */
+}
+table {
+    min-width: 600px; /* Ensures the table doesn’t shrink too much */
+}
+
